@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ishtop — Ishchi topish</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="find.css" />
+  </head>
+
+  <body>
+    <!-- HEADER (same structure/classes) -->
+    <header class="header">
+      <h1 class="header__title">
+        <a href="./index.html">ishtop</a>
+      </h1>
+
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="index.html" class="header__link">Bosh sahifa</a>
+          </li>
+          <li class="header__item">
+            <a href="ishchi-topish.html" class="header__link">Ishchi topish</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Kategoriyalar</a>
+          </li>
+          <li class="header__item">
+            <a href="#faq" class="header__link">Yordam / FAQ</a>
+          </li>
+        </ul>
+
+        <button
+          class="header__login"
+          onclick="location.href = 'index.html#auth'"
+        >
+          <a href="./reg.html">Ro‘yxatdan o‘tish / Kirish</a>
+        </button>
+        <a href="#" class="header__become"
+          ><strong>Usta bo‘lib qo‘shiling</strong></a
+        >
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="findhero">
+      <div class="findhero__container">
+        <div class="findhero__left">
+          <div class="findhero__badge">Ishchi topish • Tez • Ishonchli</div>
+          <h2 class="findhero__title">
+            Sizga mos ishchini toping — tez va aniq.
+          </h2>
+          <p class="findhero__subtitle">
+            Usta, elektrik, santexnik yoki oddiy ishchi kerakmi? Filtrlar orqali
+            joylashuv, tajriba va baho bo‘yicha tanlang.
+          </p>
+
+          <div class="findhero__actions">
+            <a class="findhero__primary" href="#search">Ishchi qidirish</a>
+            <a class="findhero__secondary" href="#how">Qanday ishlaydi?</a>
+          </div>
+
+          <div class="findhero__trust">
+            <div class="trust__item">
+              <span class="trust__num">4.8★</span>
+              <span class="trust__text">O‘rtacha baho</span>
+            </div>
+            <div class="trust__item">
+              <span class="trust__num">2k+</span>
+              <span class="trust__text">Usta / ishchi</span>
+            </div>
+            <div class="trust__item">
+              <span class="trust__num">10k+</span>
+              <span class="trust__text">Mijoz</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="findhero__right">
+          <div class="heroCard">
+            <h3 class="heroCard__title">Tez qidiruv</h3>
+            <p class="heroCard__desc">
+              Kerakli ishchini bir necha parametr orqali toping.
+            </p>
+
+            <form class="heroCard__form" id="search">
+              <label class="field">
+                <span class="field__label">Kategoriyani tanlang</span>
+                <select class="field__input" name="category" required>
+                  <option value="" selected disabled>Kategoriya</option>
+                  <option>Santexnik</option>
+                  <option>Elektrik</option>
+                  <option>Usta / Qurilish</option>
+                  <option>Tozalash xizmati</option>
+                  <option>Yuk tashish / Ko‘chirish</option>
+                  <option>Oddiy ishchi / Yordamchi</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span class="field__label">Shahar / Tuman</span>
+                <input
+                  class="field__input"
+                  type="text"
+                  name="location"
+                  placeholder="Masalan: Toshkent, Chilonzor"
+                />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Minimal baho</span>
+                <select class="field__input" name="rating">
+                  <option value="" selected>Farqi yo‘q</option>
+                  <option>4.8+</option>
+                  <option>4.5+</option>
+                  <option>4.0+</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span class="field__label">Byudjet (so‘m)</span>
+                <input
+                  class="field__input"
+                  type="number"
+                  name="budget"
+                  placeholder="Masalan: 150000"
+                  min="0"
+                />
+              </label>
+
+              <button class="heroCard__btn" type="submit">
+                Natijalarni ko‘rish
+              </button>
+
+              <p class="heroCard__note">
+                Natijalar namunaviy. Backend ulanganidan keyin real filtr
+                ishlaydi.
+              </p>
+            </form>
+          </div>
+
+          <div class="miniGrid">
+            <div class="mini">
+              <h4 class="mini__title">Tasdiqlangan profillar</h4>
+              <p class="mini__text">Telefon va profil tekshiruvi.</p>
+            </div>
+            <div class="mini">
+              <h4 class="mini__title">Real baholar</h4>
+              <p class="mini__text">Mijozlar izohlari asosida.</p>
+            </div>
+            <div class="mini">
+              <h4 class="mini__title">Tez aloqa</h4>
+              <p class="mini__text">Bir klikda bog‘lanish.</p>
+            </div>
+            <div class="mini mini--accent">
+              <h4 class="mini__title">Xavfsiz kelishuv</h4>
+              <p class="mini__text">Shartlar va qoidalar bilan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <main class="results">
+      <div class="results__container">
+        <div class="results__head">
+          <h2 class="results__title">Tavsiya etilgan ishchilar</h2>
+          <p class="results__subtitle">
+            Quyidagi profillar namuna. Siz ularni keyin API/DB orqali
+            to‘ldirasiz.
+          </p>
+        </div>
+
+        <section class="cards">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card__top">
+              <div class="card__avatar">SG</div>
+              <div class="card__meta">
+                <h3 class="card__name">Sardor Gʻaniyev</h3>
+                <p class="card__role">Santexnik • 5 yil tajriba</p>
+              </div>
+              <div class="card__rating">4.9★</div>
+            </div>
+
+            <div class="card__tags">
+              <span class="tag">Chilonzor</span>
+              <span class="tag">Tezkor</span>
+              <span class="tag tag--accent">Kafolat</span>
+            </div>
+
+            <p class="card__desc">
+              Quvur, kran, unitaz o‘rnatish va ta’mirlash. Shoshilinch chaqiruv
+              mavjud.
+            </p>
+
+            <div class="card__bottom">
+              <span class="card__price">150 000 so‘m / ish</span>
+              <div class="card__actions">
+                <a class="btn btn--ghost" href="#">Profil</a>
+                <a class="btn btn--primary" href="#">Bog‘lanish</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card__top">
+              <div class="card__avatar">AK</div>
+              <div class="card__meta">
+                <h3 class="card__name">Aziza Karimova</h3>
+                <p class="card__role">Tozalash xizmati • 3 yil tajriba</p>
+              </div>
+              <div class="card__rating">4.8★</div>
+            </div>
+
+            <div class="card__tags">
+              <span class="tag">Yunusobod</span>
+              <span class="tag">Ofis / Uy</span>
+              <span class="tag tag--accent">Paketlar</span>
+            </div>
+
+            <p class="card__desc">
+              Uy va ofis tozalash, remontdan keyin. Toza va tartibli ishlash
+              kafolat.
+            </p>
+
+            <div class="card__bottom">
+              <span class="card__price">120 000 so‘m / kun</span>
+              <div class="card__actions">
+                <a class="btn btn--ghost" href="#">Profil</a>
+                <a class="btn btn--primary" href="#">Bog‘lanish</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card__top">
+              <div class="card__avatar">JD</div>
+              <div class="card__meta">
+                <h3 class="card__name">Jasur Davlatov</h3>
+                <p class="card__role">Elektrik • 6 yil tajriba</p>
+              </div>
+              <div class="card__rating">4.7★</div>
+            </div>
+
+            <div class="card__tags">
+              <span class="tag">Mirzo Ulug‘bek</span>
+              <span class="tag">Diagnostika</span>
+              <span class="tag tag--accent">Xavfsiz</span>
+            </div>
+
+            <p class="card__desc">
+              Rozetka, yoritish, avtomat, qisqa tutashuv muammolari. Xavfsiz
+              o‘rnatish.
+            </p>
+
+            <div class="card__bottom">
+              <span class="card__price">200 000 so‘m / ish</span>
+              <div class="card__actions">
+                <a class="btn btn--ghost" href="#">Profil</a>
+                <a class="btn btn--primary" href="#">Bog‘lanish</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card">
+            <div class="card__top">
+              <div class="card__avatar">MB</div>
+              <div class="card__meta">
+                <h3 class="card__name">Murod Bek</h3>
+                <p class="card__role">Oddiy ishchi • 2 yil tajriba</p>
+              </div>
+              <div class="card__rating">4.6★</div>
+            </div>
+
+            <div class="card__tags">
+              <span class="tag">Sergeli</span>
+              <span class="tag">Yuk tashish</span>
+              <span class="tag tag--accent">Soatlik</span>
+            </div>
+
+            <p class="card__desc">
+              Yuk ko‘tarish, ko‘chirish, mayda ishlar. Intizomli va
+              mas’uliyatli.
+            </p>
+
+            <div class="card__bottom">
+              <span class="card__price">60 000 so‘m / soat</span>
+              <div class="card__actions">
+                <a class="btn btn--ghost" href="#">Profil</a>
+                <a class="btn btn--primary" href="#">Bog‘lanish</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how">
+      <div class="how__container">
+        <div class="how__head">
+          <h2 class="how__title">Qanday ishlaydi?</h2>
+          <p class="how__subtitle">3 qadamda ishchini topasiz.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">01</div>
+            <h3 class="step__title">Kategoriyani tanlang</h3>
+            <p class="step__text">
+              Santexnik, elektrik, usta yoki oddiy ishchi — keraklisini
+              belgilang.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__num">02</div>
+            <h3 class="step__title">Filtrlang va solishtiring</h3>
+            <p class="step__text">
+              Joylashuv, baho, tajriba va tariflar bo‘yicha tanlang.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__num">03</div>
+            <h3 class="step__title">Bog‘laning va kelishing</h3>
+            <p class="step__text">
+              Profil orqali aloqa qiling va ish shartlarini kelishib oling.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="faq__container">
+        <h2 class="faq__title">Yordam / FAQ</h2>
+
+        <details class="faq__item">
+          <summary class="faq__q">Ishchini topish bepulmi?</summary>
+          <p class="faq__a">
+            Ha, qidirish bepul. Kelishuv va to‘lov ish beruvchi hamda ishchi
+            o‘rtasida.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">Tasdiqlangan profil degani nima?</summary>
+          <p class="faq__a">
+            Telefon raqami va asosiy ma’lumotlar tekshirilgan bo‘ladi (keyin KYC
+            qo‘shishingiz mumkin).
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            Qanday qilib “Usta bo‘lib qo‘shilish” mumkin?
+          </summary>
+          <p class="faq__a">
+            Ro‘yxatdan o‘ting, “Usta / Ishchi” rolini tanlang va profilingizni
+            to‘ldiring.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- FOOTER (same as your theme) -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__brand">
+          <div class="footer__logo" aria-label="Ishtop logo">
+            <span class="footer__dot"></span>
+            <span class="footer__name">ishtop</span>
+          </div>
+
+          <p class="footer__desc">
+            Ish topish va ishchi topish uchun ishonchli platforma. Usta,
+            elektrik, santexnik va oddiy ishchilarni tezda toping.
+          </p>
+
+          <div class="footer__badges">
+            <span class="footer__badge">Verified taskers</span>
+            <span class="footer__badge footer__badge--accent"
+              >24/7 support</span
+            >
+          </div>
+        </div>
+
+        <nav class="footer__col" aria-label="Footer navigation">
+          <h3 class="footer__title">Platforma</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="index.html">Bosh sahifa</a></li>
+            <li>
+              <a class="footer__link" href="ishchi-topish.html"
+                >Ishchi topish</a
+              >
+            </li>
+            <li><a class="footer__link" href="#">Kategoriyalar</a></li>
+            <li><a class="footer__link" href="#faq">Yordam / FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Tasker</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#">Usta bo‘lib qo‘shiling</a></li>
+            <li><a class="footer__link" href="#">Qoidalar</a></li>
+            <li><a class="footer__link" href="#">Profilni to‘ldirish</a></li>
+            <li><a class="footer__link" href="#">Xavfsizlik</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Yordam</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#faq">FAQ</a></li>
+            <li><a class="footer__link" href="#">Bog‘lanish</a></li>
+            <li><a class="footer__link" href="#">Shikoyat qilish</a></li>
+            <li><a class="footer__link" href="#">Maxfiylik</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__newsletter">
+          <h3 class="footer__title">Yangiliklar</h3>
+          <p class="footer__desc footer__desc--sm">
+            Haftalik yangiliklar va ish e’lonlari. Spam yo‘q.
+          </p>
+
+          <form class="footer__form" action="#" method="post">
+            <input
+              class="footer__input"
+              type="email"
+              name="email"
+              placeholder="Email manzilingiz"
+              required
+            />
+            <button class="footer__btn" type="submit">Obuna bo‘lish</button>
+          </form>
+
+          <p class="footer__note">
+            Obuna bo‘lish orqali siz shartlarga rozilik bildirasiz.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          © <span id="year"></span> ishtop. Barcha huquqlar himoyalangan.
+        </p>
+
+        <div class="footer__social" aria-label="Social links">
+          <a class="footer__icon" href="#" aria-label="Telegram">
+            <i class="icon fa-brands fa-telegram"></i>
+          </a>
+          <a class="footer__icon" href="#" aria-label="Instagram">
+            <i class="icon fa-brands fa-instagram"></i>
+          </a>
+          <a class="footer__icon" href="#" aria-label="YouTube">
+            <i class="icon fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // small page reveal (optional)
+      const reveal = document.querySelectorAll(
+        ".findhero__left, .heroCard, .mini, .card, .step, .faq__item",
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      reveal.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

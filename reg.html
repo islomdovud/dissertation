@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reg.css" />
+  </head>
+  <body>
+    <section class="auth" id="auth">
+      <div class="auth__container">
+        <!-- Left info -->
+        <div class="auth__info">
+          <div class="auth__badge">
+            <a href="./index.html">Ishtop • Xavfsiz platforma</a>
+          </div>
+
+          <h2 class="auth__title">Ro‘yxatdan o‘ting yoki tizimga kiring</h2>
+          <p class="auth__subtitle">
+            Ish topish va ishchi topish uchun profil yarating. Tasdiqlangan
+            ustalar, real baholar va tezkor aloqa.
+          </p>
+
+          <ul class="auth__benefits">
+            <li class="auth__benefit">
+              ✅ Profil va buyurtmalar tarixini saqlash
+            </li>
+            <li class="auth__benefit">✅ Ish e’lonlarini tez joylash</li>
+            <li class="auth__benefit">✅ Ustalar reytingi va izohlar</li>
+            <li class="auth__benefit">
+              ✅ Xavfsiz aloqa va qo‘llab-quvvatlash
+            </li>
+          </ul>
+
+          <div class="auth__stats">
+            <div class="auth__stat">
+              <span class="auth__statNum">10k+</span>
+              <span class="auth__statText">Foydalanuvchi</span>
+            </div>
+            <div class="auth__stat">
+              <span class="auth__statNum">2k+</span>
+              <span class="auth__statText">Usta / Ishchi</span>
+            </div>
+            <div class="auth__stat">
+              <span class="auth__statNum">4.8★</span>
+              <span class="auth__statText">O‘rtacha baho</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right form -->
+        <div class="auth__card">
+          <div class="auth__tabs" role="tablist" aria-label="Auth tabs">
+            <button
+              class="auth__tab auth__tab--active"
+              type="button"
+              data-tab="signup"
+            >
+              Ro‘yxatdan o‘tish
+            </button>
+            <button class="auth__tab" type="button" data-tab="login">
+              Kirish
+            </button>
+          </div>
+
+          <!-- SIGN UP -->
+          <form
+            class="auth__form auth__form--active"
+            data-panel="signup"
+            action="#"
+            method="post"
+          >
+            <div class="auth__grid">
+              <label class="auth__field">
+                <span class="auth__label">Ism</span>
+                <input
+                  class="auth__input"
+                  type="text"
+                  name="firstName"
+                  placeholder="Masalan: Chingiz"
+                  required
+                />
+              </label>
+
+              <label class="auth__field">
+                <span class="auth__label">Telefon</span>
+                <input
+                  class="auth__input"
+                  type="tel"
+                  name="phone"
+                  placeholder="+998 __ ___ __ __"
+                  required
+                />
+              </label>
+
+              <label class="auth__field auth__field--full">
+                <span class="auth__label">Email (ixtiyoriy)</span>
+                <input
+                  class="auth__input"
+                  type="email"
+                  name="email"
+                  placeholder="example@gmail.com"
+                />
+              </label>
+
+              <label class="auth__field auth__field--full">
+                <span class="auth__label">Parol</span>
+                <input
+                  class="auth__input"
+                  type="password"
+                  name="password"
+                  placeholder="Kamida 8 ta belgi"
+                  required
+                />
+              </label>
+
+              <label class="auth__field auth__field--full">
+                <span class="auth__label">Siz kimsiz?</span>
+                <select class="auth__input auth__select" name="role" required>
+                  <option value="" selected disabled>Tanlang</option>
+                  <option value="client">
+                    Ish beruvchi (ishchi qidiraman)
+                  </option>
+                  <option value="worker">Usta / Ishchi (ish qidiraman)</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="auth__check">
+              <input class="auth__checkbox" type="checkbox" required />
+              <span class="auth__checkText">
+                Men <a class="auth__inlineLink" href="#">Shartlar</a> va
+                <a class="auth__inlineLink" href="#">Maxfiylik</a> siyosatiga
+                roziman.
+              </span>
+            </label>
+
+            <button class="auth__primary" type="submit">
+              Ro‘yxatdan o‘tish
+            </button>
+
+            <div class="auth__divider"><span>yoki</span></div>
+
+            <button class="auth__ghost" type="button">
+              Google bilan davom etish
+            </button>
+            <button class="auth__ghost" type="button">
+              Telegram orqali kirish
+            </button>
+
+            <p class="auth__hint">
+              Allaqachon profilingiz bormi?
+              <button class="auth__linkBtn" type="button" data-switch="login">
+                Kirish
+              </button>
+            </p>
+          </form>
+
+          <!-- LOGIN -->
+          <form class="auth__form" data-panel="login" action="#" method="post">
+            <label class="auth__field auth__field--full">
+              <span class="auth__label">Telefon yoki Email</span>
+              <input
+                class="auth__input"
+                type="text"
+                name="login"
+                placeholder="+998 __ ___ __ __ / email"
+                required
+              />
+            </label>
+
+            <label class="auth__field auth__field--full">
+              <span class="auth__label">Parol</span>
+              <input
+                class="auth__input"
+                type="password"
+                name="password"
+                placeholder="Parolingiz"
+                required
+              />
+            </label>
+
+            <div class="auth__row">
+              <label class="auth__check auth__check--row">
+                <input class="auth__checkbox" type="checkbox" />
+                <span class="auth__checkText">Eslab qolish</span>
+              </label>
+
+              <a class="auth__inlineLink" href="#">Parolni unutdingizmi?</a>
+            </div>
+
+            <button class="auth__primary" type="submit">Kirish</button>
+
+            <div class="auth__divider"><span>yoki</span></div>
+
+            <button class="auth__ghost" type="button">
+              Google bilan kirish
+            </button>
+            <button class="auth__ghost" type="button">
+              Telegram orqali kirish
+            </button>
+
+            <p class="auth__hint">
+              Yangi foydalanuvchimisiz?
+              <button class="auth__linkBtn" type="button" data-switch="signup">
+                Ro‘yxatdan o‘tish
+              </button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Tabs switch (no library)
+      const tabs = document.querySelectorAll(".auth__tab");
+      const panels = document.querySelectorAll(".auth__form");
+      const switchers = document.querySelectorAll("[data-switch]");
+
+      function setTab(name) {
+        tabs.forEach((t) =>
+          t.classList.toggle("auth__tab--active", t.dataset.tab === name),
+        );
+        panels.forEach((p) =>
+          p.classList.toggle("auth__form--active", p.dataset.panel === name),
+        );
+      }
+
+      tabs.forEach((t) =>
+        t.addEventListener("click", () => setTab(t.dataset.tab)),
+      );
+      switchers.forEach((b) =>
+        b.addEventListener("click", () => setTab(b.dataset.switch)),
+      );
+    </script>
+  </body>
+</html>
