@@ -67,7 +67,6 @@
           <form
             class="auth__form auth__form--active"
             data-panel="signup"
-            action="#"
             method="post"
           >
             <div class="auth__grid">
@@ -157,7 +156,7 @@
           </form>
 
           <!-- LOGIN -->
-          <form class="auth__form" data-panel="login" action="#" method="post">
+          <form class="auth__form" data-panel="login" method="post">
             <label class="auth__field auth__field--full">
               <span class="auth__label">Telefon yoki Email</span>
               <input
@@ -211,27 +210,5 @@
       </div>
     </section>
 
-    <script>
-      // Tabs switch (no library)
-      const tabs = document.querySelectorAll(".auth__tab");
-      const panels = document.querySelectorAll(".auth__form");
-      const switchers = document.querySelectorAll("[data-switch]");
-
-      function setTab(name) {
-        tabs.forEach((t) =>
-          t.classList.toggle("auth__tab--active", t.dataset.tab === name),
-        );
-        panels.forEach((p) =>
-          p.classList.toggle("auth__form--active", p.dataset.panel === name),
-        );
-      }
-
-      tabs.forEach((t) =>
-        t.addEventListener("click", () => setTab(t.dataset.tab)),
-      );
-      switchers.forEach((b) =>
-        b.addEventListener("click", () => setTab(b.dataset.switch)),
-      );
-    </script>
   </body>
 </html>
